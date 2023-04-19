@@ -2,15 +2,15 @@
 <div class="top-bar-boxed h-[70px] z-[51] relative border-b border-white/[0.08] mt-12 md:-mt-5 -mx-3 sm:-mx-8 px-3 sm:px-8 md:pt-0 mb-12">
     <div class="h-full flex items-center">
         <!-- BEGIN: Logo -->
-        <a href="" class="-intro-x hidden md:flex">
+        <a href="/" class="-intro-x hidden md:flex">
             <img alt="National system Logo" class="w-6" src="{{ asset('build/assets/images/NS-Logo.png') }}">
         </a>
         <!-- END: Logo -->
         <!-- BEGIN: Breadcrumb -->
         <nav aria-label="breadcrumb" class="-intro-x h-full mr-auto">
             <ol class="breadcrumb breadcrumb-light">
-                <li class="breadcrumb-item"><a href="#">National system</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                <li class="breadcrumb-item" aria-current="page">National system</li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="/">Dashboard</a></li>
             </ol>
         </nav>
         <!-- END: Breadcrumb -->

@@ -21,6 +21,14 @@ class SideMenu
                 ],
                 'title' => 'Dashboard'
             ],
+            'clients' => [
+                'icon' => 'users',
+                'route_name' => 'admin.clients.index',
+                'params' => [
+                    'layout' => 'side-menu'
+                ],
+                'title' => 'Clients'
+            ],
             // 'dashboard' => [
             //     'icon' => 'home',
             //     'title' => 'Dashboard',

@@ -16,12 +16,12 @@
                             <div class="intro-y box p-5">
                                 <div>
                                     <label for="client_number" class="form-label">Client Serial</label>
-                                    <input  type="text" id="client_number" name="client_number" class="form-control w-full" placeholder="Input text">
+                                    <input  type="text" id="client_number" name="client_number" class="form-control w-full" placeholder="Serial Number">
                                 </div>
                             <br>
                             <div>
                                 <label for="client_name" class="form-label">Client Name</label>
-                                <input  type="text" id="client_name" name="client_name" class="form-control w-full" placeholder="Input text">
+                                <input  type="text" id="client_name" name="client_name" class="form-control w-full" placeholder="CIB | Commercial International Bank Egypt">
                             </div>
                             <div class="mt-3">
                                 <label for="crud-form-2" class="form-label">Client Category</label>
@@ -43,7 +43,7 @@
                             <br>
                                 <div>
                                     <label for="description" class="form-label">Description</label>
-                                    <input  type="text" id="description" name="description" class="form-control w-full" placeholder="Input text">
+                                    <input  type="text" id="description" name="description" class="form-control w-full" placeholder="Optional">
                                 </div>
                                 <div class="text-right mt-5">
                                     <button type="button" class="btn btn-outline-secondary w-24 mr-1"><a href="{{ URL::previous() }}">Cancel</a></button>
@@ -56,6 +56,4 @@
    </form>
 @endsection
 
-@section('script')
-    {{-- <script src="{{ mix('dist/js/ckeditor-classic.js') }}"></script> --}}
-@endsection
+

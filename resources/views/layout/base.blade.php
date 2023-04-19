@@ -1,13 +1,4 @@
 <!DOCTYPE html>
-<!--
-Template Name: Icewall - HTML Admin Dashboard Template
-Author: Left4code
-Website: http://www.left4code.com/
-Contact: muhammadrizki@left4code.com
-Purchase: https://themeforest.net/user/left4code/portfolio
-Renew Support: https://themeforest.net/user/left4code/portfolio
-License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
--->
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="{{ $dark_mode ? 'dark' : '' }}{{ $color_scheme != 'default' ? ' ' . $color_scheme : '' }}">
 <!-- BEGIN: Head -->
 <head>
@@ -19,6 +10,8 @@ License: You must have a valid license purchased only from themeforest(the above
     <meta name="keywords" content=";)">
     <meta name="author" content=";)">
     <title>National system employees terminal - @yield('title')</title>
+    <link rel="stylesheet" href="{{ asset('custom/jquery.dataTables.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     @yield('head')
 
     <!-- BEGIN: CSS Assets-->

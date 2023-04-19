@@ -1,27 +1,4 @@
 @extends('../layout/' . $layout)
-
-@section('head')
-{{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> --}}
-<link rel="stylesheet" href="{{ asset('custom/jquery.dataTables.min.css') }}">
-<!-- <style>
-
-
-.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-  background: none;
-  color: white!important;
-  /*change the hover text color*/
-}
-
-
-/*below block of css for change style when active*/
-
-.dataTables_wrapper .dataTables_paginate .paginate_button:active {
-  background: none;
-  color: black!important;
-}
-</style> -->
-@endsection
-
 @section('subcontent')
 
 <h2 class="intro-y text-lg font-medium mt-10">Clients</h2>
@@ -151,34 +128,13 @@
 @endsection
 @section('script')
 {{-- search --}}
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-{{-- <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script> --}}
-<script src="{{ asset('custom/jquery.dataTables.min.js') }}"></script>
 <script>
   let table = new DataTable('#myTable', {
-    
     pagingType: 'full_numbers',
     pageLength: 10,
-    
-    // language: {
-    //   oPaginate: {
-    //     sNext: '<i class="w-4 h-4" data-lucide="chevron-right"></i>',
-    //     sPrevious: '<i class="w-4 h-4" data-lucide="chevron-left"></i>',
-    //     sFirst: '<i class="w-4 h-4" data-lucide="chevrons-left"></i>',
-    //     sLast: '<i class="w-4 h-4" data-lucide="chevrons-right"></i>'
-    //   }
-    // }   
- 
 });
-
-
 </script>
-
-<link rel="stylesheet" type="text/css" 
-     href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-	
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <script>
     @if(Session::has('message'))
     toastr.options =
@@ -215,7 +171,5 @@
     }
             toastr.warning("{{ session('warning') }}");
     @endif
-  </script>
-
-
+</script>
 @endsection
