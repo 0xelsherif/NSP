@@ -29,6 +29,14 @@ class SideMenu
                 ],
                 'title' => 'Clients'
             ],
+            'services' => [
+                'icon' => 'layers',
+                'route_name' => 'admin.services.index',
+                'params' => [
+                    'layout' => 'side-menu'
+                ],
+                'title' => 'Services'
+            ],
             // 'dashboard' => [
             //     'icon' => 'home',
             //     'title' => 'Dashboard',
