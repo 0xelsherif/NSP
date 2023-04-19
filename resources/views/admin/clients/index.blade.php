@@ -1,4 +1,5 @@
 @extends('../layout/' . $layout)
+@section('title', 'Clients')
 @section('subcontent')
 
 <h2 class="intro-y text-lg font-medium mt-10">Clients</h2>
@@ -64,7 +65,7 @@
                     </td>
                     <td class="text-center">{{ $c->client_number }}</td>
                     <td class="text-center">{{ $c->country->name }}</td>
-                    <td class="text-center">{{ $c->created_at }}</td>
+                    <td class="text-center">{{ $c->created_at->format("d/m/Y h:i A") }}</td>
                     <td class="text-center">{{ $c->user->name }}</td>
                     
                     <td class="w-40">

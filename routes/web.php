@@ -32,6 +32,7 @@ Route::middleware('auth')->group(function() {
                 'index' => 'admin.clients.index',
                 'create' => 'admin.clients.create',
                 'edit' => 'admin.clients.edit',
+                'update' => 'admin.clients.update',
                 'destroy' => 'admin.clients.destroy',
                
                 

@@ -7,6 +7,7 @@ use App\Models\Country;
 use App\Models\Categories;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class ClientsController extends Controller
 {
@@ -41,22 +42,23 @@ class ClientsController extends Controller
      */
     public function store(Request $request)
     {
+        $rules = $this -> getRules();
+        $messages = $this -> getMessages();
+        $validator = Validator::make($request->all(),$rules,$messages);
+        if($validator -> fails()){
+            return redirect()->back()->withErrors($validator)->withInputs($request->all());
+        //    return $validator -> errors(); 
+        }
         Clients::create([
-            
             'client_number' => $request->client_number,
             'client_name' => $request->client_name,
             'country_id' => $request->country_id,
             'categories_id' => $request->categories_id,
+            'notes' => $request->notes,
             'Created_by' => (Auth::user()->name),
             'user_id' => auth()->id()
 
         ]);
-        
-        // session()->flash('Add', 'added new test');
-        
-        
-      
-
         return redirect()->route('admin.clients.index')->with('message','Client added Successfully');
     }
 
@@ -80,7 +82,9 @@ class ClientsController extends Controller
     public function edit($id)
     {
         $client = Clients::find($id);
-        return view('admin.clients.edit', compact('client'));
+        $countries = Country::pluck('name', 'id');
+        $categories = Categories::pluck('name', 'id');
+        return view('admin.clients.edit', compact('client', 'countries', 'categories'));
     }
 
     /**
@@ -90,9 +94,18 @@ class ClientsController extends Controller
      * @param  \App\Models\Clients  $clients
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Clients $clients)
+    public function update(Request $request, $id)
     {
-        //
+        $clients = Clients::find($id);
+        $clients->update([
+            'client_number' => $request->client_number,
+            'client_name' => $request->client_name,
+            'country_id' => $request->country_id,
+            'categories_id' => $request->categories_id,
+            'notes' => $request->notes,
+            'status' => $request->has('status'),
+        ]);
+        return redirect()->route('admin.clients.index')->with('message','Client updated Successfully');
     }
 
     /**
@@ -112,5 +125,23 @@ class ClientsController extends Controller
         $clients = Clients::find($id);
         $clients->delete();
         return redirect()->route('admin.clients.index')->with('error','Client Deleted Successfully');;
+    }
+    protected function getRules(){
+        return $rules = [
+            'client_number' => 'required|max:10|unique:clients,client_number',
+            'client_name' => 'required|max:100|unique:clients,client_name',
+            'country_id' => 'required',
+            'categories_id' => 'required',
+        ];
+    }
+    protected function getMessages(){
+        return $messages = [
+            'client_number.required' => 'Client Serial required',
+            'client_number.max' => 'Client Serial must not be greater than 10 characters',
+            'client_number.unique' => 'Client Serial has already been taken',
+            'client_name.required' => 'Client Name required',
+            'client_name.max' => 'Client Name must not be greater than 10 characters',
+            'client_name.unique' => 'Client Name has already been taken',
+        ];
     }
 }
