@@ -124,7 +124,7 @@ class ClientsController extends Controller
     {
         $clients = Clients::find($id);
         $clients->delete();
-        return redirect()->route('admin.clients.index')->with('error','Client Deleted Successfully');;
+        return redirect()->route('admin.clients.index')->with('error','Client Deleted Successfully');
     }
     protected function getRules(){
         return $rules = [
@@ -136,12 +136,12 @@ class ClientsController extends Controller
     }
     protected function getMessages(){
         return $messages = [
-            'client_number.required' => 'Client Serial required',
-            'client_number.max' => 'Client Serial must not be greater than 10 characters',
-            'client_number.unique' => 'Client Serial has already been taken',
-            'client_name.required' => 'Client Name required',
-            'client_name.max' => 'Client Name must not be greater than 10 characters',
-            'client_name.unique' => 'Client Name has already been taken',
+            'client_number.required' => 'Client Serial required!',
+            'client_number.max' => 'Client Serial must not be greater than 10 characters!',
+            'client_number.unique' => 'Client Serial has already been taken!',
+            'client_name.required' => 'Client Name required!',
+            'client_name.max' => 'Client Name must not be greater than 10 characters!',
+            'client_name.unique' => 'Client Name has already been taken!',
         ];
     }
 }

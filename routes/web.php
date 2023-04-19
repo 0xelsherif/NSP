@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ClientsController;
+use App\Http\Controllers\ServicesController;
 
 
 /*
@@ -33,10 +34,16 @@ Route::middleware('auth')->group(function() {
                 'create' => 'admin.clients.create',
                 'edit' => 'admin.clients.edit',
                 'update' => 'admin.clients.update',
-                'destroy' => 'admin.clients.destroy',
-               
-                
-                
+                'destroy' => 'admin.clients.destroy',     
+            ]
+        ]);
+        Route::resource('Services', ServicesController::class, [
+            'names' => [
+                'index' => 'admin.services.index',
+                'create' => 'admin.services.create',
+                'edit' => 'admin.services.edit',
+                'update' => 'admin.services.update',
+                'destroy' => 'admin.services.destroy',     
             ]
         ]);
        
