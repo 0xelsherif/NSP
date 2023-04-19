@@ -55,7 +55,7 @@
                                     </div>
                                 </div>
                                 <div class="text-right mt-5">
-                                    <button type="button" class="btn btn-outline-secondary w-24 mr-1"><a href="{{url()->previous()}}">Cancel</a></button>
+                                    <button type="button" class="btn btn-outline-secondary w-24 mr-1"><a href="/Clients">Cancel</a></button>
                                     <button type="submit" class="btn btn-primary w-24">Update</button>
                                 </div>
                             </div>
