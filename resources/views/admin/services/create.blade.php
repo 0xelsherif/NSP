@@ -6,7 +6,7 @@
 
 @section('subcontent')
     <div class="intro-y flex items-center mt-8">
-        <h2 class="text-lg font-medium mr-auto">Create New Client</h2>
+        <h2 class="text-lg font-medium mr-auto">Create New Service</h2>
     </div>
     <form action="{{ route('Services.store') }}" method="post">
         {{ csrf_field() }}

@@ -28,21 +28,29 @@
                                         <div class="text-danger mt-2">{{ $message }}</div>
                                     @enderror
                                 </div>
-                                <div class="mt-3">
-                                    <label for="crud-form-2" class="form-label">Client Category</label>
-                                    <select data-placeholder="Select Client Category" class="tom-select w-full"  name="categories_id" id="categories_id" required>
+                                <div class="input-form mt-3">
+                                    <label for="categories_id" class="form-label">Client Category</label>
+                                    <select data-placeholder="Select Client Category" class="tom-select w-full @error('categories_id') border-danger @enderror"  name="categories_id" id="categories_id" required>
+                                        <option selected disabled>Please select Client Category</option>  
                                         @foreach($categories as $id => $entry)
                                         <option value="{{ $id }}" {{ old('categories_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
                                         @endforeach
                                     </select>
+                                    @error('categories_id')
+                                        <div class="has-error text-danger mt-2">{{ $message }}</div>
+                                    @enderror
                                 </div>
-                                <div class="mt-3">
-                                    <label for="crud-form-2" class="form-label">Client Country</label>
-                                    <select data-placeholder="Select Client Country" class="tom-select w-full"  name="country_id" id="country_id" required>
+                                <div class="input-form mt-3">
+                                    <label for="country_id" class="form-label">Client Country</label>
+                                    <select data-placeholder="Select Client Country" class="tom-select w-full @error('country_id') border-danger @enderror"  name="country_id" id="country_id" required>
+                                        <option selected disabled>Please select Client Country</option> 
                                         @foreach($countries as $id => $entry)
                                         <option value="{{ $id }}" {{ old('country_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
                                         @endforeach
                                     </select>
+                                    @error('country_id')
+                                    <div class="has-error text-danger mt-2">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                <div class="mt-3">
                                     <label for="notes" class="form-label">Description</label>

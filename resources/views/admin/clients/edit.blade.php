@@ -15,17 +15,23 @@
                         <div class="intro-y col-span-12 lg:col-span-6">
                             <!-- BEGIN: Form Layout -->
                             <div class="intro-y box p-5">
-                                <div class="mt-3">
-                                    <label for="client_number" class="form-label">Client Name</label>
+                                <div class="input-form mt-3 @error('client_number') has-error @enderror">
+                                    <label for="client_number" class="form-label">Client Serial</label>
                                     <input  type="text" id="client_number" name="client_number" class="form-control w-full" value="{{ old('client_number', $client->client_number) }}">
+                                    @error('client_number')
+                                    <div class="has-error text-danger mt-2">{{ $message }}</div>
+                                    @enderror
                                 </div>
                            
-                                <div class="mt-3">
+                                <div class="input-form mt-3 @error('client_name') has-error @enderror">
                                     <label for="client_name" class="form-label">Client Name</label>
                                     <input  type="text" id="client_name" name="client_name" class="form-control w-full" value="{{ old('client_name', $client->client_name) }}">
+                                    @error('client_name')
+                                    <div class="text-danger mt-2">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             
-                                <div class="mt-3">
+                                <div class="input-form mt-3">
                                     <label for="crud-form-2" class="form-label">Client Category</label>
                                     <select data-placeholder="Select your favorite actors" class="tom-select w-full" id="crud-form-2" name="categories_id" id="categories_id" required>
                                         @foreach($categories as $id => $entry)
@@ -33,7 +39,7 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="mt-3">
+                                <div class="input-form mt-3">
                                     <label for="crud-form-2" class="form-label">Client Country</label>
                                     <select data-placeholder="Select your favorite actors" class="tom-select w-full" id="crud-form-2" name="country_id" id="country_id" required>
                                         @foreach($countries as $id => $entry)
@@ -43,11 +49,11 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="mt-3">
+                                <div class="input-form mt-3">
                                     <label for="notes" class="form-label">Description</label>
                                     <input  type="text" id="notes" name="notes" class="form-control w-full" value="{{ old('notes', $client->notes) }}">
                                 </div>
-                                <div class="mt-3">
+                                <div class="input-form mt-3">
                                     <label>Status</label>
                                     <div class="form-switch mt-2">
 
