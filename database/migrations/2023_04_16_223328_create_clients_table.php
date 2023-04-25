@@ -31,7 +31,7 @@ return new class extends Migration
             $table->unsignedBigInteger('categories_id');
             // $table->foreign('categories_id')->references('id')->on('categories')->onDelete('cascade');
             $table->longText('notes')->nullable();
-            $table->boolean('status')->default(1);;
+            $table->boolean('status')->default(1);
             $table->softDeletes();
             $table->timestamps();
         });

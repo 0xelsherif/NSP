@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\LeadsController;
 
 
 /*
@@ -44,6 +45,15 @@ Route::middleware('auth')->group(function() {
                 'edit' => 'admin.services.edit',
                 'update' => 'admin.services.update',
                 'destroy' => 'admin.services.destroy',     
+            ]
+        ]);
+        Route::resource('Leads', LeadsController::class, [
+            'names' => [
+                'index' => 'admin.leads.index',
+                'create' => 'admin.leads.create',
+                'edit' => 'admin.leads.edit',
+                'update' => 'admin.leads.update',
+                'destroy' => 'admin.leads.destroy',     
             ]
         ]);
        

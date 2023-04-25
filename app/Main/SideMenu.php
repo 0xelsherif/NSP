@@ -29,6 +29,14 @@ class SideMenu
                 ],
                 'title' => 'Clients'
             ],
+            'leads' => [
+                'icon' => 'share-2',
+                'route_name' => 'admin.leads.index',
+                'params' => [
+                    'layout' => 'side-menu'
+                ],
+                'title' => 'Leads'
+            ],
             'services' => [
                 'icon' => 'layers',
                 'route_name' => 'admin.services.index',
