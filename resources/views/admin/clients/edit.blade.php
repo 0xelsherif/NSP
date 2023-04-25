@@ -1,8 +1,6 @@
 @extends('../layout/' . $layout)
 
-@section('subhead')
-    <title>Sections</title>
-@endsection
+@section('title', 'Clients')
 
 @section('subcontent')
     <div class="intro-y flex items-center mt-8">
