@@ -6,7 +6,8 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\LeadsController;
-
+use App\Http\Controllers\InvoicesController;
+use App\Http\Controllers\ProjectsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,6 +55,24 @@ Route::middleware('auth')->group(function() {
                 'edit' => 'admin.leads.edit',
                 'update' => 'admin.leads.update',
                 'destroy' => 'admin.leads.destroy',     
+            ]
+        ]);
+        Route::resource('Projects', ProjectsController::class, [
+            'names' => [
+                'index' => 'admin.projects.index',
+                'create' => 'admin.projects.create',
+                'edit' => 'admin.projects.edit',
+                'update' => 'admin.projects.update',
+                'destroy' => 'admin.projects.destroy',     
+            ]
+        ]);
+        Route::resource('Invoices', InvoicesController::class, [
+            'names' => [
+                'index' => 'admin.invoices.index',
+                'create' => 'admin.invoices.create',
+                // 'edit' => 'admin.invoices.edit',
+                // 'update' => 'admin.invoices.update',
+                // 'destroy' => 'admin.invoices.destroy',     
             ]
         ]);
        

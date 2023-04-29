@@ -37,6 +37,14 @@ class SideMenu
                 ],
                 'title' => 'Leads'
             ],
+            'projects' => [
+                'icon' => 'folder',
+                'route_name' => 'admin.projects.index',
+                'params' => [
+                    'layout' => 'side-menu'
+                ],
+                'title' => 'Projects'
+            ],
             'services' => [
                 'icon' => 'layers',
                 'route_name' => 'admin.services.index',
@@ -44,6 +52,14 @@ class SideMenu
                     'layout' => 'side-menu'
                 ],
                 'title' => 'Services'
+            ],
+            'inoices' => [
+                'icon' => 'book',
+                'route_name' => 'admin.invoices.index',
+                'params' => [
+                    'layout' => 'side-menu'
+                ],
+                'title' => 'Invoices'
             ],
             // 'dashboard' => [
             //     'icon' => 'home',

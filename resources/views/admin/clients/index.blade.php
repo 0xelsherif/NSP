@@ -43,7 +43,6 @@
                 <tr>
                     <th class="text-center whitespace-nowrap">#</th>
                     <th class="whitespace-nowrap">NAME</th>
-                    <th class="text-center whitespace-nowrap">SERIAL</th>
                     <th class="text-center whitespace-nowrap">REGION</th>
                     <th class="text-center whitespace-nowrap">JOINING DATE</th>
                     <th class="text-center whitespace-nowrap">CREATED BY</th>
@@ -63,7 +62,6 @@
                         <a href="" class="font-medium whitespace-nowrap">{{ $c->client_name }}</a>
                         <div class="text-slate-500 text-xs whitespace-nowrap mt-0.5">{{ $c->categories->name }}</div>
                     </td>
-                    <td class="text-center">{{ $c->client_number }}</td>
                     <td class="text-center">{{ $c->country->name }}</td>
                     <td class="text-center">{{ $c->created_at->format("d/m/Y h:i A") }}</td>
                     <td class="text-center">{{ $c->user->name }}</td>

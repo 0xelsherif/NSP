@@ -54,7 +54,7 @@ class ClientsController extends Controller
             'user_id' => auth()->id()
 
         ]);
-        return redirect()->route('admin.clients.index')->with('message','Client added Successfully');
+        return redirect()->route('admin.clients.index')->with('message','Client created successfully  ');
     }
 
     /**
@@ -100,7 +100,7 @@ class ClientsController extends Controller
             'notes' => $request->notes,
             'status' => $request->has('status'),
         ]);
-        return redirect()->route('admin.clients.index')->with('message','Client updated Successfully');
+        return redirect()->route('admin.clients.index')->with('message','Client updated successfully ');
     }
 
     /**
@@ -113,7 +113,7 @@ class ClientsController extends Controller
     {
         $clients = Clients::find($id);
         $clients->delete();
-        return redirect()->route('admin.clients.index')->with('error','Client Deleted Successfully');
+        return redirect()->route('admin.clients.index')->with('error','Client deleted successfully ');
     }
 
 }

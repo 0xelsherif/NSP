@@ -51,7 +51,7 @@ class ServicesController extends Controller
             'user_id' => auth()->id()
 
         ]);
-        return redirect()->route('admin.services.index')->with('message','Service added Successfully');
+        return redirect()->route('admin.services.index')->with('message','Service created successfully  ');
     }
 
     /**
@@ -91,7 +91,7 @@ class ServicesController extends Controller
             'service_name' => $request->service_name,
             'description' => $request->description,
         ]);
-        return redirect()->route('admin.services.index')->with('message','Service updated Successfully');
+        return redirect()->route('admin.services.index')->with('message','Service updated successfully ');
 
     }
 
@@ -105,7 +105,7 @@ class ServicesController extends Controller
     {
         $service = services::find($id);
         $service->delete();
-        return redirect()->route('admin.services.index')->with('error','Service Deleted Successfully');
+        return redirect()->route('admin.services.index')->with('error','Service deleted successfully ');
     }
     protected function getRules(){
         return $rules = [
