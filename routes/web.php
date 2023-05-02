@@ -8,6 +8,7 @@ use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\LeadsController;
 use App\Http\Controllers\InvoicesController;
 use App\Http\Controllers\ProjectsController;
+use App\Http\Controllers\ExpenseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,8 +76,20 @@ Route::middleware('auth')->group(function() {
                 // 'destroy' => 'admin.invoices.destroy',     
             ]
         ]);
+        Route::resource('Expenses', ExpenseController::class, [
+            'names' => [
+                'index' => 'admin.expenses.index',
+                'create' => 'admin.expenses.create',
+                'edit' => 'admin.expenses.edit',
+                'update' => 'admin.expenses.update',
+                'destroy' => 'admin.expenses.destroy',     
+            ]
+        ]);
        
-
+        // Route::get('Excategories/{id}', [ExpenseController::class, 'Getextypes']);
+        Route::post('/expense_types/{id}', [ExpenseController::class, 'gettypes'])->name('gettypes');
+        // Route::post('subcat', 'CategoryController@subCat');
+        // Route::get('/excategories/{id}', 'ExpenseController@getextypes');
 
 
         Route::get('dashboard-overview-2-page', 'dashboardOverview2')->name('dashboard-overview-2');

@@ -82,9 +82,9 @@
                 </div>
                 <!-- END: General Report -->
                 <!-- BEGIN: Sales Report -->
-                <div class="col-span-12 lg:col-span-6 mt-8">
+                <div class="col-span-12 lg:col-span-9 mt-8">
                     <div class="intro-y block sm:flex items-center h-10">
-                        <h2 class="text-lg font-medium truncate mr-5">Sales Report</h2>
+                        <h2 class="text-lg font-medium truncate mr-5">Income vs Expenses</h2>
                         <div class="sm:ml-auto mt-3 sm:mt-0 relative text-slate-500">
                             <i data-lucide="calendar" class="w-4 h-4 z-10 absolute my-auto inset-y-0 ml-3 left-0"></i>
                             <input type="text" class="datepicker form-control sm:w-56 box pl-10">
@@ -94,16 +94,21 @@
                         <div class="flex flex-col md:flex-row md:items-center">
                             <div class="flex">
                                 <div>
-                                    <div class="text-primary dark:text-slate-300 text-lg xl:text-xl font-medium">$15,000</div>
-                                    <div class="mt-0.5 text-slate-500">This Month</div>
+                                    <div class="text-primary dark:text-slate-300 text-lg xl:text-xl font-medium">150,000 EGP</div>
+                                    <div class="mt-0.5 text-slate-500">Net Income</div>
                                 </div>
                                 <div class="w-px h-12 border border-r border-dashed border-slate-200 dark:border-darkmode-300 mx-4 xl:mx-5"></div>
                                 <div>
-                                    <div class="text-slate-500 text-lg xl:text-xl font-medium">$10,000</div>
-                                    <div class="mt-0.5 text-slate-500">Last Month</div>
+                                    <div class="text-danger text-lg xl:text-xl font-medium">50,000 EGP</div>
+                                    <div class="mt-0.5 text-slate-500">Total Expenses</div>
+                                </div>
+                                <div class="w-px h-12 border border-r border-dashed border-slate-200 dark:border-darkmode-300 mx-4 xl:mx-5"></div>
+                                <div>
+                                    <div class="text-success text-lg xl:text-xl font-medium">100,000 EGP</div>
+                                    <div class="mt-0.5 text-slate-500">Total Revenues</div>
                                 </div>
                             </div>
-                            <div class="dropdown md:ml-auto mt-5 md:mt-0">
+                            <!-- <div class="dropdown md:ml-auto mt-5 md:mt-0">
                                 <button class="dropdown-toggle btn btn-outline-secondary font-normal" aria-expanded="false" data-tw-toggle="dropdown">
                                     Filter by Category <i data-lucide="chevron-down" class="w-4 h-4 ml-2"></i>
                                 </button>
@@ -116,7 +121,7 @@
                                         <li><a href="" class="dropdown-item">Sport</a></li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="report-chart">
                             <div class="h-[275px]">
@@ -129,7 +134,7 @@
                 <!-- BEGIN: Weekly Top Seller -->
                 <div class="col-span-12 sm:col-span-6 lg:col-span-3 mt-8">
                     <div class="intro-y flex items-center h-10">
-                        <h2 class="text-lg font-medium truncate mr-5">Weekly Top Seller</h2>
+                        <h2 class="text-lg font-medium truncate mr-5">Invoice Analytics</h2>
                         <a href="" class="ml-auto text-primary truncate">Show More</a>
                     </div>
                     <div class="intro-y box p-5 mt-5">
@@ -159,7 +164,7 @@
                 </div>
                 <!-- END: Weekly Top Seller -->
                 <!-- BEGIN: Sales Report -->
-                <div class="col-span-12 sm:col-span-6 lg:col-span-3 mt-8">
+                <!-- <div class="col-span-12 sm:col-span-6 lg:col-span-3 mt-8">
                     <div class="intro-y flex items-center h-10">
                         <h2 class="text-lg font-medium truncate mr-5">Sales Report</h2>
                         <a href="" class="ml-auto text-primary truncate">Show More</a>
@@ -188,30 +193,284 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- END: Sales Report -->
                 <!-- BEGIN: Official Store -->
-                <div class="col-span-12 xl:col-span-8 mt-6">
+                <!-- <div class="col-span-12 xl:col-span-8 mt-6">
                     <div class="intro-y block sm:flex items-center h-10">
-                        <h2 class="text-lg font-medium truncate mr-5">Official Store</h2>
+                        <h2 class="text-lg font-medium truncate mr-5">Recent Invoices</h2>
                         <div class="sm:ml-auto mt-3 sm:mt-0 relative text-slate-500">
                             <i data-lucide="map-pin" class="w-4 h-4 z-10 absolute my-auto inset-y-0 ml-3 left-0"></i>
                             <input type="text" class="form-control sm:w-56 box pl-10" placeholder="Filter by city">
                         </div>
                     </div>
-                    <div class="intro-y box p-5 mt-12 sm:mt-5">
-                        <div>250 Official stores in 21 countries, click the marker to see location details.</div>
-                        <div class="report-maps mt-5 bg-slate-200 rounded-md" data-center="-6.2425342, 106.8626478" data-sources="/build/assets/json/location.json"></div>
-                    </div>
-                </div>
+                    <table class="table table-report sm:mt-2">
+                            <thead>
+                                <tr>
+                                    <th class="whitespace-nowrap">IMAGES</th>
+                                    <th class="whitespace-nowrap">PRODUCT NAME</th>
+                                    <th class="text-center whitespace-nowrap">STOCK</th>
+                                    <th class="text-center whitespace-nowrap">STATUS</th>
+                                    <th class="text-center whitespace-nowrap">ACTIONS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                                                    <tr class="intro-x">
+                                        <td class="w-40">
+                                            <div class="flex">
+                                                <div class="w-10 h-10 image-fit zoom-in">
+                                                    <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="http://127.0.0.1:8000/build/assets/images/preview-6.jpg">
+                                                </div>
+                                                <div class="w-10 h-10 image-fit zoom-in -ml-5">
+                                                    <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="http://127.0.0.1:8000/build/assets/images/preview-15.jpg">
+                                                </div>
+                                                <div class="w-10 h-10 image-fit zoom-in -ml-5">
+                                                    <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="http://127.0.0.1:8000/build/assets/images/preview-4.jpg">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <a href="" class="font-medium whitespace-nowrap">Oppo Find X2 Pro</a>
+                                            <div class="text-slate-500 text-xs whitespace-nowrap mt-0.5">Smartphone &amp; Tablet</div>
+                                        </td>
+                                        <td class="text-center">116</td>
+                                        <td class="w-40">
+                                            <div class="flex items-center justify-center text-success">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="check-square" data-lucide="check-square" class="lucide lucide-check-square w-4 h-4 mr-2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg> Active
+                                            </div>
+                                        </td>
+                                        <td class="table-report__action w-56">
+                                            <div class="flex justify-center items-center">
+                                                <a class="flex items-center mr-3" href="">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="check-square" data-lucide="check-square" class="lucide lucide-check-square w-4 h-4 mr-1"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg> Edit
+                                                </a>
+                                                <a class="flex items-center text-danger" href="">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="trash-2" data-lucide="trash-2" class="lucide lucide-trash-2 w-4 h-4 mr-1"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg> Delete
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                                                    <tr class="intro-x">
+                                        <td class="w-40">
+                                            <div class="flex">
+                                                <div class="w-10 h-10 image-fit zoom-in">
+                                                    <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="http://127.0.0.1:8000/build/assets/images/preview-3.jpg">
+                                                </div>
+                                                <div class="w-10 h-10 image-fit zoom-in -ml-5">
+                                                    <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="http://127.0.0.1:8000/build/assets/images/preview-10.jpg">
+                                                </div>
+                                                <div class="w-10 h-10 image-fit zoom-in -ml-5">
+                                                    <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="http://127.0.0.1:8000/build/assets/images/preview-8.jpg">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <a href="" class="font-medium whitespace-nowrap">Nike Air Max 270</a>
+                                            <div class="text-slate-500 text-xs whitespace-nowrap mt-0.5">Sport &amp; Outdoor</div>
+                                        </td>
+                                        <td class="text-center">90</td>
+                                        <td class="w-40">
+                                            <div class="flex items-center justify-center text-success">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="check-square" data-lucide="check-square" class="lucide lucide-check-square w-4 h-4 mr-2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg> Active
+                                            </div>
+                                        </td>
+                                        <td class="table-report__action w-56">
+                                            <div class="flex justify-center items-center">
+                                                <a class="flex items-center mr-3" href="">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="check-square" data-lucide="check-square" class="lucide lucide-check-square w-4 h-4 mr-1"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg> Edit
+                                                </a>
+                                                <a class="flex items-center text-danger" href="">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="trash-2" data-lucide="trash-2" class="lucide lucide-trash-2 w-4 h-4 mr-1"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg> Delete
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                                                    <tr class="intro-x">
+                                        <td class="w-40">
+                                            <div class="flex">
+                                                <div class="w-10 h-10 image-fit zoom-in">
+                                                    <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="http://127.0.0.1:8000/build/assets/images/preview-5.jpg">
+                                                </div>
+                                                <div class="w-10 h-10 image-fit zoom-in -ml-5">
+                                                    <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="http://127.0.0.1:8000/build/assets/images/preview-8.jpg">
+                                                </div>
+                                                <div class="w-10 h-10 image-fit zoom-in -ml-5">
+                                                    <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="http://127.0.0.1:8000/build/assets/images/preview-7.jpg">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <a href="" class="font-medium whitespace-nowrap">Oppo Find X2 Pro</a>
+                                            <div class="text-slate-500 text-xs whitespace-nowrap mt-0.5">Smartphone &amp; Tablet</div>
+                                        </td>
+                                        <td class="text-center">50</td>
+                                        <td class="w-40">
+                                            <div class="flex items-center justify-center text-success">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="check-square" data-lucide="check-square" class="lucide lucide-check-square w-4 h-4 mr-2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg> Active
+                                            </div>
+                                        </td>
+                                        <td class="table-report__action w-56">
+                                            <div class="flex justify-center items-center">
+                                                <a class="flex items-center mr-3" href="">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="check-square" data-lucide="check-square" class="lucide lucide-check-square w-4 h-4 mr-1"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg> Edit
+                                                </a>
+                                                <a class="flex items-center text-danger" href="">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="trash-2" data-lucide="trash-2" class="lucide lucide-trash-2 w-4 h-4 mr-1"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg> Delete
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                                                    <tr class="intro-x">
+                                        <td class="w-40">
+                                            <div class="flex">
+                                                <div class="w-10 h-10 image-fit zoom-in">
+                                                    <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="http://127.0.0.1:8000/build/assets/images/preview-2.jpg">
+                                                </div>
+                                                <div class="w-10 h-10 image-fit zoom-in -ml-5">
+                                                    <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="http://127.0.0.1:8000/build/assets/images/preview-10.jpg">
+                                                </div>
+                                                <div class="w-10 h-10 image-fit zoom-in -ml-5">
+                                                    <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="http://127.0.0.1:8000/build/assets/images/preview-9.jpg">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <a href="" class="font-medium whitespace-nowrap">Nikon Z6</a>
+                                            <div class="text-slate-500 text-xs whitespace-nowrap mt-0.5">Photography</div>
+                                        </td>
+                                        <td class="text-center">104</td>
+                                        <td class="w-40">
+                                            <div class="flex items-center justify-center text-danger">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="check-square" data-lucide="check-square" class="lucide lucide-check-square w-4 h-4 mr-2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg> Inactive
+                                            </div>
+                                        </td>
+                                        <td class="table-report__action w-56">
+                                            <div class="flex justify-center items-center">
+                                                <a class="flex items-center mr-3" href="">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="check-square" data-lucide="check-square" class="lucide lucide-check-square w-4 h-4 mr-1"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg> Edit
+                                                </a>
+                                                <a class="flex items-center text-danger" href="">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="trash-2" data-lucide="trash-2" class="lucide lucide-trash-2 w-4 h-4 mr-1"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg> Delete
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="intro-x">
+                                        <td class="w-40">
+                                            <div class="flex">
+                                                <div class="w-10 h-10 image-fit zoom-in">
+                                                    <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="http://127.0.0.1:8000/build/assets/images/preview-2.jpg">
+                                                </div>
+                                                <div class="w-10 h-10 image-fit zoom-in -ml-5">
+                                                    <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="http://127.0.0.1:8000/build/assets/images/preview-10.jpg">
+                                                </div>
+                                                <div class="w-10 h-10 image-fit zoom-in -ml-5">
+                                                    <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="http://127.0.0.1:8000/build/assets/images/preview-9.jpg">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <a href="" class="font-medium whitespace-nowrap">Nikon Z6</a>
+                                            <div class="text-slate-500 text-xs whitespace-nowrap mt-0.5">Photography</div>
+                                        </td>
+                                        <td class="text-center">104</td>
+                                        <td class="w-40">
+                                            <div class="flex items-center justify-center text-danger">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="check-square" data-lucide="check-square" class="lucide lucide-check-square w-4 h-4 mr-2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg> Inactive
+                                            </div>
+                                        </td>
+                                        <td class="table-report__action w-56">
+                                            <div class="flex justify-center items-center">
+                                                <a class="flex items-center mr-3" href="">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="check-square" data-lucide="check-square" class="lucide lucide-check-square w-4 h-4 mr-1"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg> Edit
+                                                </a>
+                                                <a class="flex items-center text-danger" href="">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="trash-2" data-lucide="trash-2" class="lucide lucide-trash-2 w-4 h-4 mr-1"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg> Delete
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="intro-x">
+                                        <td class="w-40">
+                                            <div class="flex">
+                                                <div class="w-10 h-10 image-fit zoom-in">
+                                                    <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="http://127.0.0.1:8000/build/assets/images/preview-2.jpg">
+                                                </div>
+                                                <div class="w-10 h-10 image-fit zoom-in -ml-5">
+                                                    <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="http://127.0.0.1:8000/build/assets/images/preview-10.jpg">
+                                                </div>
+                                                <div class="w-10 h-10 image-fit zoom-in -ml-5">
+                                                    <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="http://127.0.0.1:8000/build/assets/images/preview-9.jpg">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <a href="" class="font-medium whitespace-nowrap">Nikon Z6</a>
+                                            <div class="text-slate-500 text-xs whitespace-nowrap mt-0.5">Photography</div>
+                                        </td>
+                                        <td class="text-center">104</td>
+                                        <td class="w-40">
+                                            <div class="flex items-center justify-center text-danger">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="check-square" data-lucide="check-square" class="lucide lucide-check-square w-4 h-4 mr-2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg> Inactive
+                                            </div>
+                                        </td>
+                                        <td class="table-report__action w-56">
+                                            <div class="flex justify-center items-center">
+                                                <a class="flex items-center mr-3" href="">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="check-square" data-lucide="check-square" class="lucide lucide-check-square w-4 h-4 mr-1"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg> Edit
+                                                </a>
+                                                <a class="flex items-center text-danger" href="">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="trash-2" data-lucide="trash-2" class="lucide lucide-trash-2 w-4 h-4 mr-1"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg> Delete
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="intro-x">
+                                        <td class="w-40">
+                                            <div class="flex">
+                                                <div class="w-10 h-10 image-fit zoom-in">
+                                                    <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="http://127.0.0.1:8000/build/assets/images/preview-2.jpg">
+                                                </div>
+                                                <div class="w-10 h-10 image-fit zoom-in -ml-5">
+                                                    <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="http://127.0.0.1:8000/build/assets/images/preview-10.jpg">
+                                                </div>
+                                                <div class="w-10 h-10 image-fit zoom-in -ml-5">
+                                                    <img alt="Midone - HTML Admin Template" class="tooltip rounded-full" src="http://127.0.0.1:8000/build/assets/images/preview-9.jpg">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <a href="" class="font-medium whitespace-nowrap">Nikon Z6</a>
+                                            <div class="text-slate-500 text-xs whitespace-nowrap mt-0.5">Photography</div>
+                                        </td>
+                                        <td class="text-center">104</td>
+                                        <td class="w-40">
+                                            <div class="flex items-center justify-center text-danger">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="check-square" data-lucide="check-square" class="lucide lucide-check-square w-4 h-4 mr-2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg> Inactive
+                                            </div>
+                                        </td>
+                                        <td class="table-report__action w-56">
+                                            <div class="flex justify-center items-center">
+                                                <a class="flex items-center mr-3" href="">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="check-square" data-lucide="check-square" class="lucide lucide-check-square w-4 h-4 mr-1"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg> Edit
+                                                </a>
+                                                <a class="flex items-center text-danger" href="">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="trash-2" data-lucide="trash-2" class="lucide lucide-trash-2 w-4 h-4 mr-1"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg> Delete
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                                            </tbody>
+                        </table><a href="" class="intro-y w-full block text-center rounded-md py-4 border border-dotted border-slate-400 dark:border-darkmode-300 text-slate-500">View All Invoices</a>
+                </div> -->
                 <!-- END: Official Store -->
                 <!-- BEGIN: Weekly Best Sellers -->
-                <div class="col-span-12 xl:col-span-4 mt-6">
+                <!-- <div class="col-span-12 xl:col-span-4 mt-6">
                     <div class="intro-y flex items-center h-10">
-                        <h2 class="text-lg font-medium truncate mr-5">Weekly Best Sellers</h2>
+                        <h2 class="text-lg font-medium truncate mr-5">Projects</h2>
                     </div>
                     <div class="mt-5">
-                        @foreach (array_slice($fakers, 0, 4) as $faker)
+                        @foreach (array_slice($fakers, 0, 7) as $faker)
                             <div class="intro-y">
                                 <div class="box px-4 py-4 mb-3 flex items-center zoom-in">
                                     <div class="w-10 h-10 flex-none image-fit rounded-md overflow-hidden">
@@ -225,12 +484,12 @@
                                 </div>
                             </div>
                         @endforeach
-                        <a href="" class="intro-y w-full block text-center rounded-md py-4 border border-dotted border-slate-400 dark:border-darkmode-300 text-slate-500">View More</a>
+                        <a href="" class="intro-y w-full block text-center rounded-md py-4 border border-dotted border-slate-400 dark:border-darkmode-300 text-slate-500">View All Projects</a>
                     </div>
-                </div>
+                </div> -->
                 <!-- END: Weekly Best Sellers -->
                 <!-- BEGIN: General Report -->
-                <div class="col-span-12 grid grid-cols-12 gap-6 mt-8">
+                <!-- <div class="col-span-12 grid grid-cols-12 gap-6 mt-8">
                     <div class="col-span-12 sm:col-span-6 2xl:col-span-3 intro-y">
                         <div class="box p-5 zoom-in">
                             <div class="flex items-center">
@@ -289,10 +548,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- END: General Report -->
                 <!-- BEGIN: Weekly Top Products -->
-                <div class="col-span-12 mt-6">
+                <!-- <div class="col-span-12 mt-6">
                     <div class="intro-y block sm:flex items-center h-10">
                         <h2 class="text-lg font-medium truncate mr-5">Weekly Top Products</h2>
                         <div class="flex items-center sm:ml-auto mt-3 sm:mt-0">
@@ -403,8 +662,165 @@
                             <option>50</option>
                         </select>
                     </div>
-                </div>
+                </div> -->
                 <!-- END: Weekly Top Products -->
+                
+            </div>
+        </div>
+        <div class="col-span-12 2xl:col-span-3 relative z-10">
+            <div class="2xl:border-l pb-10 intro-y">
+                <div class="2xl:pl-6 grid grid-cols-12 gap-x-6 2xl:gap-x-0 gap-y-6">
+                    <!-- BEGIN: Recent Activities -->
+                    <div class="col-span-12 md:col-span-6 2xl:col-span-12 mt-3 2xl:mt-6">
+                        <div class="intro-x flex items-center h-10">
+                            <h2 class="text-lg font-medium truncate mr-5">Recent Activities</h2>
+                            <a href="" class="ml-auto text-primary truncate">Show More</a>
+                        </div>
+                        <div class="mt-5 relative before:block before:absolute before:w-px before:h-[85%] before:bg-slate-200 before:dark:bg-darkmode-400 before:ml-5 before:mt-5">
+                            <div class="intro-x relative flex items-center mb-3">
+                                <div class="before:block before:absolute before:w-20 before:h-px before:bg-slate-200 before:dark:bg-darkmode-400 before:mt-5 before:ml-5">
+                                    <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
+                                        <img alt="Midone - HTML Admin Template" src="https://icewall-laravel.left4code.com/dist/images/profile-5.jpg">
+                                    </div>
+                                </div>
+                                <div class="box px-5 py-3 ml-4 flex-1 zoom-in">
+                                    <div class="flex items-center">
+                                        <div class="font-medium">Christian Bale</div>
+                                        <div class="text-xs text-slate-500 ml-auto">07:00 PM</div>
+                                    </div>
+                                    <div class="text-slate-500 mt-1">Has joined the team</div>
+                                </div>
+                            </div>
+                            <div class="intro-x relative flex items-center mb-3">
+                                <div class="before:block before:absolute before:w-20 before:h-px before:bg-slate-200 before:dark:bg-darkmode-400 before:mt-5 before:ml-5">
+                                    <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
+                                        <img alt="Midone - HTML Admin Template" src="https://icewall-laravel.left4code.com/dist/images/profile-4.jpg">
+                                    </div>
+                                </div>
+                                <div class="box px-5 py-3 ml-4 flex-1 zoom-in">
+                                    <div class="flex items-center">
+                                        <div class="font-medium">Robert De Niro</div>
+                                        <div class="text-xs text-slate-500 ml-auto">07:00 PM</div>
+                                    </div>
+                                    <div class="text-slate-500">
+                                        <div class="mt-1">Added 3 new photos</div>
+                                        <div class="flex mt-2">
+                                            <div class="tooltip w-8 h-8 image-fit mr-1 zoom-in">
+                                                <img alt="Midone - HTML Admin Template" class="rounded-md border border-white" src="https://icewall-laravel.left4code.com/dist/images/preview-13.jpg">
+                                            </div>
+                                            <div class="tooltip w-8 h-8 image-fit mr-1 zoom-in">
+                                                <img alt="Midone - HTML Admin Template" class="rounded-md border border-white" src="https://icewall-laravel.left4code.com/dist/images/preview-9.jpg">
+                                            </div>
+                                            <div class="tooltip w-8 h-8 image-fit mr-1 zoom-in">
+                                                <img alt="Midone - HTML Admin Template" class="rounded-md border border-white" src="https://icewall-laravel.left4code.com/dist/images/preview-6.jpg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="intro-x text-slate-500 text-xs text-center my-4">12 November</div>
+                            <div class="intro-x relative flex items-center mb-3">
+                                <div class="before:block before:absolute before:w-20 before:h-px before:bg-slate-200 before:dark:bg-darkmode-400 before:mt-5 before:ml-5">
+                                    <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
+                                        <img alt="Midone - HTML Admin Template" src="https://icewall-laravel.left4code.com/dist/images/profile-1.jpg">
+                                    </div>
+                                </div>
+                                <div class="box px-5 py-3 ml-4 flex-1 zoom-in">
+                                    <div class="flex items-center">
+                                        <div class="font-medium">Robert De Niro</div>
+                                        <div class="text-xs text-slate-500 ml-auto">07:00 PM</div>
+                                    </div>
+                                    <div class="text-slate-500 mt-1">Has changed <a class="text-primary" href="">Nike Tanjun</a> price and description</div>
+                                </div>
+                            </div>
+                            <div class="intro-x relative flex items-center mb-3">
+                                <div class="before:block before:absolute before:w-20 before:h-px before:bg-slate-200 before:dark:bg-darkmode-400 before:mt-5 before:ml-5">
+                                    <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
+                                        <img alt="Midone - HTML Admin Template" src="https://icewall-laravel.left4code.com/dist/images/profile-13.jpg">
+                                    </div>
+                                </div>
+                                <div class="box px-5 py-3 ml-4 flex-1 zoom-in">
+                                    <div class="flex items-center">
+                                        <div class="font-medium">Robert De Niro</div>
+                                        <div class="text-xs text-slate-500 ml-auto">07:00 PM</div>
+                                    </div>
+                                    <div class="text-slate-500 mt-1">Has changed <a class="text-primary" href="">Samsung Galaxy S20 Ultra</a> description</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END: Recent Activities -->
+                    <!-- BEGIN: Transactions -->
+                    <div class="col-span-12 md:col-span-6 2xl:col-span-12 mt-3">
+                        <div class="intro-x flex items-center h-10">
+                            <h2 class="text-lg font-medium truncate mr-5">Transactions</h2>
+                        </div>
+                        <div class="mt-5">
+                                                            <div class="intro-x">
+                                    <div class="box px-5 py-3 mb-3 flex items-center zoom-in">
+                                        <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
+                                            <img alt="Midone - HTML Admin Template" src="https://icewall-laravel.left4code.com/dist/images/profile-10.jpg">
+                                        </div>
+                                        <div class="ml-4 mr-auto">
+                                            <div class="font-medium">Johnny Depp</div>
+                                            <div class="text-slate-500 text-xs mt-0.5">17 November 2022</div>
+                                        </div>
+                                        <div class="text-success">+$52</div>
+                                    </div>
+                                </div>
+                                                            <div class="intro-x">
+                                    <div class="box px-5 py-3 mb-3 flex items-center zoom-in">
+                                        <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
+                                            <img alt="Midone - HTML Admin Template" src="https://icewall-laravel.left4code.com/dist/images/profile-15.jpg">
+                                        </div>
+                                        <div class="ml-4 mr-auto">
+                                            <div class="font-medium">Brad Pitt</div>
+                                            <div class="text-slate-500 text-xs mt-0.5">28 May 2021</div>
+                                        </div>
+                                        <div class="text-success">+$101</div>
+                                    </div>
+                                </div>
+                                                            <div class="intro-x">
+                                    <div class="box px-5 py-3 mb-3 flex items-center zoom-in">
+                                        <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
+                                            <img alt="Midone - HTML Admin Template" src="https://icewall-laravel.left4code.com/dist/images/profile-7.jpg">
+                                        </div>
+                                        <div class="ml-4 mr-auto">
+                                            <div class="font-medium">Brad Pitt</div>
+                                            <div class="text-slate-500 text-xs mt-0.5">13 September 2021</div>
+                                        </div>
+                                        <div class="text-success">+$60</div>
+                                    </div>
+                                </div>
+                                                            <div class="intro-x">
+                                    <div class="box px-5 py-3 mb-3 flex items-center zoom-in">
+                                        <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
+                                            <img alt="Midone - HTML Admin Template" src="https://icewall-laravel.left4code.com/dist/images/profile-7.jpg">
+                                        </div>
+                                        <div class="ml-4 mr-auto">
+                                            <div class="font-medium">Kevin Spacey</div>
+                                            <div class="text-slate-500 text-xs mt-0.5">12 July 2022</div>
+                                        </div>
+                                        <div class="text-success">+$29</div>
+                                    </div>
+                                </div>
+                                                            <div class="intro-x">
+                                    <div class="box px-5 py-3 mb-3 flex items-center zoom-in">
+                                        <div class="w-10 h-10 flex-none image-fit rounded-full overflow-hidden">
+                                            <img alt="Midone - HTML Admin Template" src="https://icewall-laravel.left4code.com/dist/images/profile-15.jpg">
+                                        </div>
+                                        <div class="ml-4 mr-auto">
+                                            <div class="font-medium">Kevin Spacey</div>
+                                            <div class="text-slate-500 text-xs mt-0.5">13 January 2021</div>
+                                        </div>
+                                        <div class="text-success">+$162</div>
+                                    </div>
+                                </div>
+                                                        <a href="" class="intro-y w-full block text-center rounded-md py-4 border border-dotted border-slate-400 dark:border-darkmode-300 text-slate-500">View More</a>
+                        </div>
+                    </div>
+                    <!-- END: Transactions -->
+                </div>
             </div>
         </div>
     

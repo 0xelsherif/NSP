@@ -38,7 +38,7 @@ class SideMenu
                 'title' => 'Leads'
             ],
             'projects' => [
-                'icon' => 'folder',
+                'icon' => 'briefcase',
                 'route_name' => 'admin.projects.index',
                 'params' => [
                     'layout' => 'side-menu'
@@ -53,13 +53,21 @@ class SideMenu
                 ],
                 'title' => 'Services'
             ],
-            'inoices' => [
-                'icon' => 'book',
+            'invoices' => [
+                'icon' => 'file-text',
                 'route_name' => 'admin.invoices.index',
                 'params' => [
                     'layout' => 'side-menu'
                 ],
                 'title' => 'Invoices'
+            ],
+            'expenses' => [
+                'icon' => 'dollar-sign',
+                'route_name' => 'admin.expenses.index',
+                'params' => [
+                    'layout' => 'side-menu'
+                ],
+                'title' => 'Expenses'
             ],
             // 'dashboard' => [
             //     'icon' => 'home',
