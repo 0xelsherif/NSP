@@ -12,7 +12,5 @@ class expenseCategory extends Model
     protected $fillable = [
         'name'
     ];
-    public function expenseType(){
-        return $this->hasMany(expenseCategory::class, 'expense_categories_id');
-    }
+   
 }

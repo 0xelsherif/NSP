@@ -45,7 +45,6 @@
                     <th class="whitespace-nowrap">EXPENSES CATEGORY</th>
                     <th class="text-center whitespace-nowrap">AMOUNT</th>
                     <th class="text-center whitespace-nowrap">DATE</th>
-                    <!-- <th class="text-center whitespace-nowrap">CREATED IN</th> -->
                     <th class="text-center whitespace-nowrap">CREATED BY</th>
                     <th class="text-center whitespace-nowrap">STATUS</th>
                     <th class="text-center whitespace-nowrap">ACTIONS</th>
@@ -60,13 +59,12 @@
                     <?php $i++; ?>
                     <td class="text-center">{{ $i }}</td>
                     <td> 
-                        <a href="" class="font-medium whitespace-nowrap">{{ $e->expenseType->name }}</a>
+                        <a href="" class="font-medium whitespace-nowrap">{{ $e->expenseType?->name }}</a>
                         <div class="text-slate-500 text-xs whitespace-nowrap mt-0.5">{{ $e->expenseCategory->name }}</div>
                     </td>
                     <td class="text-center">{{ $e->amount }} EGP</td>
                     
-                    <td class="text-center">{{ $e->entry_date}}</td>
-                    <!-- <td class="text-center">{{ $e->created_at->format("d/m/Y h:i A") }}</td> -->
+                    <td class="text-center">{{date('d-m-Y', strtotime($e->entry_date))}}</td>
                     <td class="text-center">{{ $e->user->name }}</td>
                     <td class="w-40">
                         <div class="flex items-center justify-center {{ $e->status ? 'text-success' : 'text-warning' }}">
