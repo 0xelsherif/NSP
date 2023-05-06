@@ -9,11 +9,7 @@ import $ from 'jquery';
 window.helper = helper;
 window.axios = axios;
 window.Popper = Popper;
-<<<<<<< HEAD
 window.$ = dom;
-=======
-// window.$ = dom;
->>>>>>> fa138c099e7fb801d122bd1aa203de13a3efa1e4
 window.$10 = $;
 
 // CSRF token

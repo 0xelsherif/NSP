@@ -29,7 +29,6 @@
                                 <div class="input-form mt-3">
                                     <label for="expense_categories_id" class="form-label">Expense Category</label>
                                     <select class="form-select @error('exCategory') border-danger @enderror"  name="expense_categories_id" id="exCategory" required>
-                                    <select class="form-select @error('exCategory') border-danger @enderror"  name="expense_categories_id" id="exCategory" required>
                                         <option selected disabled>Please select Expense Category</option>  
                                         @foreach($categories as $id => $entry)
                                         <!-- <option value="{{ $id }}" {{ (old('categories_id') ? old('categories_id') : $expense->categories->id ?? '') == $id ? 'selected' : '' }}>{{ $entry }}</option> -->
@@ -42,9 +41,6 @@
                                 </div>
                                 <div class="input-form mt-3">
                                     <label for="expense_types_id" class="form-label">Expense Type</label>
-                                    <select class="form-select @error('exType') border-danger @enderror"  name="expense_types_id" id="exType" required>
-                                        
-                                        
                                     <select class="form-select @error('exType') border-danger @enderror"  name="expense_types_id" id="exType" required>
                                         
                                         
@@ -80,7 +76,7 @@
    </form>
 @endsection
 @section('script')
-<script>
+<script type="text/javascript">
             $(document).ready(function() {
                 $('#exCategory').on('change', function() {
                     console.log("start");
@@ -90,6 +86,7 @@
                     $10.ajax({
                         url: "/getexType/" + exCategoryID,
                         type: "GET",
+                        data : {"_token":"{{ csrf_token() }}"},
                         data : {"_token":"{{ csrf_token() }}"},
                         dataType: "json",
                         success:function(data)
@@ -103,12 +100,12 @@
                                     $('select[name="expense_types_id"]').append('<option value="'+ key +'">' + exType.name+ '</option>');
                                 });
                             }else{
-                                $('#exType').empty();
+                                $10('#exType').empty();
                             }
                         }
                     });
                 }else{
-                    $('#exType').empty();
+                    $10('#exType').empty();
                 }
                 });
             });
