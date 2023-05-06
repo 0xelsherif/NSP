@@ -782,10 +782,14 @@ import Chart from "chart.js/auto";
                     "Jun",
                     "Jul",
                     "Aug",
+                    "Sep",
+                    "Oct",
+                    "Nov",
+                    "Dec",
                 ],
                 datasets: [
                     {
-                        label: "Html Template",
+                        label: "Net Income",
                         barPercentage: 0.5,
                         barThickness: 6,
                         maxBarThickness: 8,
@@ -794,7 +798,7 @@ import Chart from "chart.js/auto";
                         backgroundColor: colors.primary(),
                     },
                     {
-                        label: "VueJs Template",
+                        label: "Total Expenses",
                         barPercentage: 0.5,
                         barThickness: 6,
                         maxBarThickness: 8,

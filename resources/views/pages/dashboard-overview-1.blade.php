@@ -99,7 +99,7 @@
                                 </div>
                                 <div class="w-px h-12 border border-r border-dashed border-slate-200 dark:border-darkmode-300 mx-4 xl:mx-5"></div>
                                 <div>
-                                    <div class="text-danger text-lg xl:text-xl font-medium">{{ number_format(\App\Models\expense::sum('amount'), 2) }} EGP</div>
+                                    <div class="text-danger text-lg xl:text-xl font-medium">{{ number_format(\App\Models\expense::where('status', 1)->sum('amount'), 2) }} EGP</div>
                                     <div class="mt-0.5 text-slate-500">Total Expenses</div>
                                 </div>
                                 <div class="w-px h-12 border border-r border-dashed border-slate-200 dark:border-darkmode-300 mx-4 xl:mx-5"></div>
@@ -125,7 +125,7 @@
                         </div>
                         <div class="report-chart">
                             <div class="h-[275px]">
-                                <canvas id="report-line-chart" class="mt-6 -mb-6"></canvas>
+                                <canvas id="vertical-bar-chart-widget" class="mt-6 -mb-6"></canvas>
                             </div>
                         </div>
                     </div>
