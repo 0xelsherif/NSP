@@ -3,7 +3,7 @@
     <div class="h-full flex items-center">
         <!-- BEGIN: Logo -->
         <a href="/" class="-intro-x hidden md:flex">
-            <img alt="National system Logo" class="w-6" src="{{ asset('build/assets/images/NS-Logo.png') }}">
+            <img alt="National system Logo" class="w-6" src="{{ asset('/images/NS-Logo.png') }}">
         </a>
         <!-- END: Logo -->
         <!-- BEGIN: Breadcrumb -->

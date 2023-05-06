@@ -60,7 +60,7 @@
                     <?php $i++; ?>
                     <td class="text-center">{{ $i }}</td>
                     <td> 
-                        <a href="" class="font-medium whitespace-nowrap">{{ $e->expenseType->name }}</a>
+                        <a href="" class="font-medium whitespace-nowrap">{{ $e->expenseType?->name }}</a>
                         <div class="text-slate-500 text-xs whitespace-nowrap mt-0.5">{{ $e->expenseCategory->name }}</div>
                     </td>
                     <td class="text-center">{{ $e->amount }} EGP</td>

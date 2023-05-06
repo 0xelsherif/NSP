@@ -27,26 +27,21 @@
                                     @enderror
                                 </div>
                                 <div class="input-form mt-3">
-                                    <label for="expense_categories_id" class="form-label">Expense Category</label>
-                                    <select class="tom-select w-full @error('expense_categories_id') border-danger @enderror" name="expense_categories_id" id="expense_categories_id" required>
-                                        <option selected disabled>Please select Expense Category</option>  
-                                        @foreach($categories as $id => $entry)
-                                        <option value="{{ $id }}" {{ old('expense_categories_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
-                                        @endforeach
+                                    <label for="exCategory" class="form-label">Expense Category</label>
+                                    <select class="form-select @error('exCategory') border-danger @enderror" name="exCategory" id="exCategory">
+                                    <option hidden>Choose Expense Category</option>
+                                    @foreach ($exCategory as $item)
+                                    <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                    @endforeach
                                     </select>
-                                    @error('expense_categories_id')
+                                    @error('exCategory')
                                         <div class="has-error text-danger mt-2">{{ $message }}</div>
                                     @enderror
                                 </div>
                                 <div class="input-form mt-3">
-                                    <label for="expense_types_id" class="form-label">Expense Type</label>
-                                    <select class="tom-select w-full @error('expense_types_id') border-danger @enderror"  name="expense_types_id" id="expense_types_id" required>
-                                        <!-- <option selected disabled>Please select Expense Type</option>   -->
-                                        <!-- @foreach($types as $id => $entry)
-                                        <option value="{{ $id }}" {{ old('expense_types_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
-                                        @endforeach -->
-                                    </select>
-                                    @error('expense_types_id')
+                                    <label for="exType" class="form-label">Expense Type</label>
+                                    <select class="form-select @error('exType') border-danger @enderror" name="exType" id="exType"></select>
+                                    @error('exType')
                                         <div class="has-error text-danger mt-2">{{ $message }}</div>
                                     @enderror
                                 </div>
@@ -71,31 +66,41 @@
                     </div>
    </form>
 @endsection
-@section('script')        
+@section('script')
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous" type="text/javascript"></script>    -->
 
-<script>
-        $(document).ready(function() {
-            $('select[name="expense_categories_id"]').on('change', function() {
-                var SectionId = $(this).val();
-                if (SectionId) {
-                    $.ajax({
-                        url: "{{ URL::to('/expense_types/') }}/" + SectionId,
+<script type="text/javascript">
+            $(document).ready(function() {
+                $('#exCategory').on('change', function() {
+                    console.log("start");
+                var exCategoryID = $(this).val();
+                console.log(exCategoryID);
+                if(exCategoryID) {
+                    $10.ajax({
+                        url: "/getexType/" + exCategoryID,
                         type: "GET",
+                        data : {"_token":"{{ csrf_token() }}"},
                         dataType: "json",
-                        success: function(data) {
-                            $('select[name="expense_types_id"]').empty();
-                            $.each(data, function(key, value) {
-                                $('select[name="expense_types_id"]').append('<option value="' +
-                                    value + '">' + value + '</option>');
-                            });
-                        },
+                        success:function(data)
+                        {
+                            console.log('success');
+                            console.log(data);
+                            if(data){
+                                $10('#exType').empty();
+                                $10('#exType').append('<option hidden>Choose Expense Type</option>'); 
+                                $10.each(data, function(key, exType){
+                                    $('select[name="exType"]').append('<option value="'+ key +'">' + exType.name+ '</option>');
+                                });
+                            }else{
+                                $10('#exType').empty();
+                            }
+                        }
                     });
-                } else {
-                    console.log('AJAX load did not work');
+                }else{
+                    $10('#exType').empty();
                 }
+                });
             });
-        });
-
-</script>
-
+        </script>
 @endsection

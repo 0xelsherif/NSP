@@ -82,15 +82,17 @@ Route::middleware('auth')->group(function() {
                 'create' => 'admin.expenses.create',
                 'edit' => 'admin.expenses.edit',
                 'update' => 'admin.expenses.update',
-                'destroy' => 'admin.expenses.destroy',     
+                'destroy' => 'admin.expenses.destroy',
+                // 'getexType' => 'ExpenseController@getexType',
+
             ]
         ]);
+        Route::get('getexType/{id}', [ExpenseController::class, 'getexType'])->name('getexType');
+        // Route::get('getexType/', function ($id) {
+        //     $exType = App\Models\expenseType::where('expense_categories_id',$id)->get();
+        //     return response()->json($exType);
+        // });
        
-        // Route::get('Excategories/{id}', [ExpenseController::class, 'Getextypes']);
-        Route::post('/expense_types/{id}', [ExpenseController::class, 'gettypes'])->name('gettypes');
-        // Route::post('subcat', 'CategoryController@subCat');
-        // Route::get('/excategories/{id}', 'ExpenseController@getextypes');
-
 
         Route::get('dashboard-overview-2-page', 'dashboardOverview2')->name('dashboard-overview-2');
         Route::get('dashboard-overview-3-page', 'dashboardOverview3')->name('dashboard-overview-3');

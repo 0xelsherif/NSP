@@ -28,9 +28,10 @@ class ExpenseController extends Controller
      */
     public function create()
     {
-        $categories = expenseCategory::pluck('name','id');
-        $types = expenseType::pluck('name','id');
-        return view('admin.expenses.create', compact('categories','types'));
+        // $categories = expenseCategory::pluck('name','id');
+        // $types = expenseType::pluck('name','id');
+        $exCategory = expenseCategory::all();
+        return view('admin.expenses.create',['exCategory' => $exCategory]);
     }
 
     /**
@@ -112,9 +113,9 @@ class ExpenseController extends Controller
         $expense->delete();
         return redirect()->route('admin.expenses.index')->with('error','Expense record deleted successfully ');
     }
-    public function gettypes($id)
+    public function getexType($id)
     {
-        $types = DB::table("expense_types")->where("expense_categories_id", $id)->pluck("name", "id");
-        return json_encode($types);
+        $exType = expenseType::where('expense_categories_id',$id)->get();
+        return response()->json($exType);
     }
 }

@@ -10,7 +10,7 @@
             <!-- BEGIN: Login Info -->
             <div class="hidden xl:flex flex-col min-h-screen">
                 <a href="" class="-intro-x flex items-center pt-5">
-                    <img alt="Midone - HTML Admin Template" class="w-7" src="{{ asset('build/assets/images/NS-Logo.png') }}">
+                    <img alt="Midone - HTML Admin Template" class="w-7" src="{{ asset('/images/NS-Logo.png') }}">
                     
                 </a>
                 <div class="my-auto">
