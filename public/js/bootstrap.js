@@ -3,18 +3,12 @@ import helper from "./helper";
 import axios from "axios";
 import * as Popper from "@popperjs/core";
 import dom from "@left4code/tw-starter/dist/js/dom";
-import $ from 'jquery';
 
 // Set plugins globally
 window.helper = helper;
 window.axios = axios;
 window.Popper = Popper;
-<<<<<<< HEAD
 window.$ = dom;
-=======
-// window.$ = dom;
->>>>>>> fa138c099e7fb801d122bd1aa203de13a3efa1e4
-window.$10 = $;
 
 // CSRF token
 let token = document.head.querySelector('meta[name="csrf-token"]');

@@ -99,7 +99,7 @@
                                 </div>
                                 <div class="w-px h-12 border border-r border-dashed border-slate-200 dark:border-darkmode-300 mx-4 xl:mx-5"></div>
                                 <div>
-                                    <div class="text-danger text-lg xl:text-xl font-medium">50,000 EGP</div>
+                                    <div class="text-danger text-lg xl:text-xl font-medium">{{ number_format(\App\Models\expense::sum('amount'), 2) }} EGP</div>
                                     <div class="mt-0.5 text-slate-500">Total Expenses</div>
                                 </div>
                                 <div class="w-px h-12 border border-r border-dashed border-slate-200 dark:border-darkmode-300 mx-4 xl:mx-5"></div>

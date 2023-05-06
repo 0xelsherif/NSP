@@ -81,6 +81,7 @@
                         url: "/getexType/" + exCategoryID,
                         type: "GET",
                         data : {"_token":"{{ csrf_token() }}"},
+                        data : {"_token":"{{ csrf_token() }}"},
                         dataType: "json",
                         success:function(data)
                         {
@@ -100,6 +101,9 @@
                 }else{
                     $10('#exType').empty();
                 }
+                });
+            });
+        </script>
                 });
             });
         </script>

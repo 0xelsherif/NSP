@@ -44,6 +44,7 @@ class ExpenseController extends Controller
     {
         expense::create([
             'entry_date' => date('Y-m-d' , strtotime($request->entry_date)),
+            // 'entry_date' => $request->entry_date,
             'amount' => $request->amount,
             'description' => $request->description,
             'expense_categories_id' => $request->expense_categories_id,
