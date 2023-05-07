@@ -23,6 +23,7 @@ return new class extends Migration
             $table->unsignedBigInteger('client_id');
             $table->unsignedBigInteger('lead_id');
             $table->unsignedBigInteger('service_id');
+            $table->unsignedBigInteger('project_id');
             $table->decimal('amount_collection',8,2)->nullable();;
             $table->decimal('amount_Commission',8,2);
             $table->decimal('discount',8,2);

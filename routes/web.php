@@ -76,6 +76,8 @@ Route::middleware('auth')->group(function() {
                 // 'destroy' => 'admin.invoices.destroy',     
             ]
         ]);
+        Route::get('getexProject/{id}', [InvoicesController::class, 'getexProject'])->name('getexProject');
+        Route::get('getexLead/{id}', [InvoicesController::class, 'getexLead'])->name('getexLead');
         Route::resource('Expenses', ExpenseController::class, [
             'names' => [
                 'index' => 'admin.expenses.index',

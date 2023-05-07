@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\invoices;
 use Illuminate\Http\Request;
+use App\Models\Clients;
+use App\Models\services;
+use App\Models\projects;
+use App\Models\leads;
+use Illuminate\Support\Facades\Auth;
 
 class InvoicesController extends Controller
 {
@@ -24,7 +29,10 @@ class InvoicesController extends Controller
      */
     public function create()
     {
-        return view('admin.invoices.create');
+        $clients = Clients::pluck('client_name','id');
+        $services = services::pluck('service_name','id');
+        // $projects = projects::pluck('project_name','id');
+        return view('admin.invoices.create', compact('clients','services'));
     }
 
     /**
@@ -81,5 +89,15 @@ class InvoicesController extends Controller
     public function destroy(invoices $invoices)
     {
         //
+    }
+    public function getexProject($id)
+    {
+        $clp = projects::where('client_id',$id)->get();
+        return response()->json($clp);
+    }
+    public function getexLead($id)
+    {
+        $cll = leads::where('client_id',$id)->get();
+        return response()->json($cll);
     }
 }

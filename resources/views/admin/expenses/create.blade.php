@@ -28,7 +28,7 @@
                                 </div>
                                 <div class="input-form mt-3">
                                     <label for="exCategory" class="form-label">Expense Category</label>
-                                    <select class="form-select @error('exCategory') border-danger @enderror" name="expense_categories_id" id="exCategory">
+                                    <select class="form-select @error('expense_categories_id') border-danger @enderror" name="expense_categories_id" id="exCategory">
                                     <option hidden>Choose Expense Category</option>
                                     @foreach ($exCategory as $item)
                                     <option value="{{ $item->id }}">{{ $item->name }}</option>
@@ -40,7 +40,7 @@
                                 </div>
                                 <div class="input-form mt-3">
                                     <label for="exType" class="form-label">Expense Type</label>
-                                    <select class="form-select @error('exType') border-danger @enderror" name="expense_types_id" id="exType"></select>
+                                    <select class="form-select @error('expense_types_id') border-danger @enderror" name="expense_types_id" id="exType"></select>
                                     @error('exType')
                                         <div class="has-error text-danger mt-2">{{ $message }}</div>
                                     @enderror

@@ -26,7 +26,7 @@
                                         <div class="ml-2 px-2 py-0.5 bg-slate-200 text-slate-600 dark:bg-darkmode-300 dark:text-slate-400 text-xs rounded-md">Required</div>
                                     </div>
                                     <div class="leading-relaxed text-slate-500 text-xs mt-3">
-                                        The total amount will be calculated automatically 
+                                    Automatic calculation of the total amount will be performed. 
                                     </div>
                                 </div>
                             </div>
@@ -55,39 +55,38 @@
                                     </div>
                                     <div class="input-group">
                                         <div class="z-30 rounded-l w-10 flex items-center justify-center bg-slate-100 border text-slate-500 dark:bg-darkmode-700 dark:border-darkmode-800 dark:text-slate-400 -mr-1">@</div>
-                                            <select class="tom-select w-full">
-                                                <option value="0">Client</option>
-                                                <option value="2">Johnny Deep</option>
-                                                <option value="3">Robert Downey, Jr</option>
-                                                <option value="4">Samuel L. Jackson</option>
-                                                <option value="5">Morgan Freeman</option>
+                                            <select class="tom-select w-full @error('client_id') border-danger @enderror"  name="client_id" id="client_id" required>
+                                            <option selected disabled>Client</option>  
+                                                @foreach($clients as $id => $entry)
+                                                <option value="{{ $id }}" {{ old('client_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
+                                                @endforeach
                                             </select>
                                         
                                     </div>
                                     <div class="input-group mt-2 sm:mt-0">
                                         <div class="z-30 rounded-l w-10 flex items-center justify-center bg-slate-100 border text-slate-500 dark:bg-darkmode-700 dark:border-darkmode-800 dark:text-slate-400 -mr-1">@</div>
-                                            <select class="tom-select w-full">
-                                                <option value="0">Service</option>
-                                                <option value="2">Johnny Deep</option>
-                                                <option value="3">Robert Downey, Jr</option>
-                                                <option value="4">Samuel L. Jackson</option>
-                                                <option value="5">Morgan Freeman</option>
+                                            <select class="tom-select w-full @error('service_id') border-danger @enderror"  name="service_id" id="service_id" required>
+                                            <option selected disabled>Service</option>  
+                                                @foreach($services as $id => $entry)
+                                                <option value="{{ $id }}" {{ old('services_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
+                                                @endforeach
+                                            </select>
                                             </select>
                                       
                                     </div>
                                     <div class="input-group mt-2 sm:mt-0">
-                                        <div class="input-group-text">$</div>
-                                        <input type="text" class="form-control" placeholder="Amount">
+                                        <div class="input-group-text">EGP</div>
+                                        <input type="text" id="price" class="form-control" placeholder="Amount">
                                    
                                     </div>
                                     <div class="input-group">
                                         <div class="input-group-text">%</div>
-                                        <input type="text" class="form-control" placeholder="Vat">
+                                        <input type="text" id="vat" class="form-control" placeholder="Vat">
                                         
                                     </div>
                                     <div class="input-group mt-2 sm:mt-0">
-                                        <div class="input-group-text">$</div>
-                                        <input type="text" class="form-control" placeholder="Total" readonly>
+                                        <div class="input-group-text">EGP</div>
+                                        <input type="text" class="form-control" id="total" placeholder="Total" readonly>
                                       
                                     </div>
                                    
@@ -101,14 +100,14 @@
                                         <div class="font-medium">Project</div>
                                         <div class="ml-2 px-2 py-0.5 bg-slate-200 text-slate-600 dark:bg-darkmode-300 dark:text-slate-400 text-xs rounded-md">Required</div>
                                     </div>
+                                    <div class="leading-relaxed text-slate-500 text-xs mt-3">
+                                    Select a single project that has the same invoice customer.
+                                    </div>
                                 </div>
                             </div>
                             <div class="w-full mt-3 xl:mt-0 flex-1">
-                                <select id="category" class="form-select">
-                                    @foreach (array_slice($fakers, 0, 9) as $faker)
-                                        <option value="{{ $faker['categories'][0]['name'] }}">{{ $faker['categories'][0]['name'] }}</option>
-                                    @endforeach
-                                </select>
+                            <!-- <select class="tom-select w-full @error('project_id') border-danger @enderror"  name="project_id" id="project" required></select> -->
+                            <select class="form-select @error('project_id') border-danger @enderror" name="project_id" id="project" required></select>
                             </div>
                         </div>
                         <div class="form-inline items-start flex-col xl:flex-row mt-5 pt-5 first:mt-0 first:pt-0">
@@ -119,15 +118,13 @@
                                         <div class="ml-2 px-2 py-0.5 bg-slate-200 text-slate-600 dark:bg-darkmode-300 dark:text-slate-400 text-xs rounded-md">Optional</div>
                                     </div>
                                     <div class="leading-relaxed text-slate-500 text-xs mt-3">
-                                        You can choose more than one lead from the existing lead list related to the the invoice customer.
+                                    Pick one lead that is associated with the same invoice customer.
                                     </div>
                                 </div>
                             </div>
                             <div class="w-full mt-3 xl:mt-0 flex-1">
-                                <select id="subcategory" data-placeholder="Etalase" class="tom-select w-full" multiple>
-                                    @foreach (array_slice($fakers, 0, 2) as $faker)
-                                        <option selected value="{{ $faker['categories'][0]['name'] }}">{{ $faker['categories'][0]['name'] }}</option>
-                                    @endforeach
+                                <select id="lead" name="lead_id" class="form-select">
+                                   
                                 </select>
                             </div>
                         </div>
@@ -197,7 +194,6 @@
             <!-- END: Weight & Shipping -->
             <div class="flex justify-end flex-col md:flex-row gap-2 mt-5">
                 <button type="button" class="btn py-3 border-slate-300 dark:border-darkmode-400 text-slate-500 w-full md:w-52">Cancel</button>
-                <button type="button" class="btn py-3 border-slate-300 dark:border-darkmode-400 text-slate-500 w-full md:w-52">Save & Add New Product</button>
                 <button type="button" class="btn py-3 btn-primary w-full md:w-52">Save</button>
             </div>
         </div>
@@ -207,4 +203,85 @@
 
 @section('script')
     @vite('resources/js/ckeditor-classic.js')
+    <script type="text/javascript">
+            $(document).ready(function() {
+                $('#client_id').on('change', function() {
+                    console.log("start");
+                var clientID = $(this).val();
+                console.log(clientID);
+                if(clientID) {
+                    $10.ajax({
+                        url: "/getexProject/" + clientID,
+                        type: "GET",
+                        data : {"_token":"{{ csrf_token() }}"},
+                        dataType: "json",
+                        success:function(data)
+                        {
+                            console.log('success');
+                            console.log(data);
+                            if(data){
+                                $10('#project').empty();
+                                $10('#project').append('<option hidden>Choose Project</option>'); 
+                                $10.each(data, function(key, clp){
+                                    $('select[name="project_id"]').append('<option value="'+ key +'">' + clp.project_name + '</option>');
+                                });
+                            }else{
+                                $10('#project').empty();
+                            }
+                        }
+                    });
+                }else{
+                    $10('#project').empty();
+                }
+                });
+            });
+        </script>
+        <script>
+            const priceInput = document.getElementById("price");
+            const vatInput = document.getElementById("vat");
+            const totalInput = document.getElementById("total");
+
+            const calculateTotal = () => {
+                const price = parseFloat(priceInput.value);
+                const vat = parseFloat(vatInput.value);
+                const total = price + (price * vat / 100);
+                totalInput.value = total.toFixed(2);
+            }
+
+            priceInput.addEventListener("input", calculateTotal);
+            vatInput.addEventListener("input", calculateTotal);
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#client_id').on('change', function() {
+                    console.log("start");
+                var clientID = $(this).val();
+                console.log(clientID);
+                if(clientID) {
+                    $10.ajax({
+                        url: "/getexLead/" + clientID,
+                        type: "GET",
+                        data : {"_token":"{{ csrf_token() }}"},
+                        dataType: "json",
+                        success:function(data)
+                        {
+                            console.log('success');
+                            console.log(data);
+                            if(data){
+                                $10('#lead').empty();
+                                $10('#lead').append('<option hidden>Choose Lead</option>'); 
+                                $10.each(data, function(key, cll){
+                                    $('select[name="lead_id"]').append('<option value="'+ key +'">' + cll.lead_name + '</option>');
+                                });
+                            }else{
+                                $10('#lead').empty();
+                            }
+                        }
+                    });
+                }else{
+                    $10('#lead').empty();
+                }
+                });
+            });
+        </script>
 @endsection
