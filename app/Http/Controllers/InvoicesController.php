@@ -43,7 +43,26 @@ class InvoicesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        invoices::create([
+        'invoice_number' => $request->invoice_number,
+        'invoice_Date' => date('Y-m-d' , strtotime($request->invoice_Date)),
+        'collect_date' => date('Y-m-d' , strtotime($request->collect_date)),
+        'due_date' => date('Y-m-d' , strtotime($request->due_date)),
+        'client_id' => $request->client_id,
+        'lead_id' => $request->lead_id,
+        'service_id' => $request->service_id,
+        'project_id' => $request->project_id,
+        'price' => $request->price,
+        'vat' => $request->vat,
+        'total' => $request->total,
+        // 'status' => $request->status,
+        // 'value_Status' => $request->value_Status,
+        'note' => $request->note,
+        'Created_by' => (Auth::user()->name),
+        'user_id' => auth()->id()
+    
+    ]);
+    return redirect()->route('admin.invoices.index')->with('message','Invoice created successfully');
     }
 
     /**
